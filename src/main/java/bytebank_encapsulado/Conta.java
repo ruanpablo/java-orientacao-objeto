@@ -1,10 +1,15 @@
-package conta_composto;
+package bytebank_encapsulado;
 
 public class Conta {
     private double saldo; //não pode ser acessado a não ser pela própria classe
-    int agencia;
-    int numero;
-    Cliente titular;
+    private int agencia;
+    private int numero;
+    private Cliente titular;
+
+    public Conta (int agencia, int numero) {
+        this.agencia = agencia;
+        this.numero = numero;
+    }
 
     public void deposita(double valor) {
         this.saldo += valor;
@@ -28,8 +33,19 @@ public class Conta {
         return false;
     }
 
-    public double getSaldo(){
-        return this.saldo;
+    public int getAgencia() {
+        return this.agencia;
     }
 
+    public int getNumero() {
+        return this.numero;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
+
+    public Cliente getTitular() {
+        return titular;
+    }
 }
