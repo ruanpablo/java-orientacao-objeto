@@ -7,6 +7,7 @@ public class TestaContaSemcliente {
                                                 //o titular já é uma referência tipo Cliente,
                                                 //por isso que o código compila
         contaDaMarcela.titular.nome = "Marcela";
+
         System.out.println(contaDaMarcela.titular.nome);
     }
 }
