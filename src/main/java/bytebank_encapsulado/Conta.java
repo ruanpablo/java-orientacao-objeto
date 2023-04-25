@@ -5,10 +5,21 @@ public class Conta {
     private int agencia;
     private int numero;
     private Cliente titular;
+    private static int total; //esse é um atributo da classe conta, não de um objeto específico.
+                                // static - mas compartilha com os objetos
 
     public Conta (int agencia, int numero) {
+        Conta.total = Conta.getTotal() + 1;
+//        System.out.println("O total de contas é " + total);
         this.agencia = agencia;
         this.numero = numero;
+    }
+
+//    é possível método static
+//    dentro de um contexto estático não precisa do this
+//    método static só usa atributo estático
+    public static int getTotal() {
+        return Conta.total;
     }
 
     public void deposita(double valor) {
